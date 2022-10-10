@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Scub Tech Radar: un outil pour visualiser les choix technologiques, inspirer nos équipes et faire les meilleurs choix pour chaque nouveau projet">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scub Tech Radar</title>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="radar.js"></script>
+
+<link rel="stylesheet" href="radar.css">
+</head>
+
+<body>
+
+<svg id="radar"></svg>
+
+<script>
+radar_visualization({
+  svg_id: "radar",
+  width: 1450,
+  height: 1000,
+  colors: {
+    background: "#fff",
+    grid: "#bbb",
+    inactive: "#ddd"
+  },
+  title: "Scub Tech Radar",
+  quadrants: [
+    { name: "Techniques" },
+    { name: "Outils" },
+    { name: "Langages & Framework" },
+    { name: "Plateformes" },
+  ],
+  rings: [
+    { name: "À voir", color: "#93c47d" },
+    { name: "On test", color: "#93d2c2" },
+    { name: "On utilise", color: "#fbdb84" },
+    { name: "On abandonne", color: "#efafa9" }
+  ],
+  print_layout: true,
+  //ENTRIES
+  entries: [
+      {
+        "quadrant": 2,
+        "ring": 1,
+        "label": "Spring boot",
+        "active": true,
+        "moved": 0
+      },
+    ]
+  //ENTRIES
+});
+</script>
+
+</body>
+</html>
